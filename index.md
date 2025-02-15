@@ -89,3 +89,75 @@ vscode 自动进行了端口映射，打开浏览器可以看到开发机运行�
 ![image-20241106000619871](书生第四期.assets/image-20241106000619871.png)
 
 ![image-20241106000724816](书生第四期.assets/image-20241106000724816.png)
+
+## L0G2000
+
+#### Leetcode 383
+
+##### 代码
+
+```python
+class Solution:
+    def canConstruct(self, ransomNote: str, magazine: str) -> bool:
+        def count_letters(s):
+            count_dict = {}
+            for letter in s:
+                if letter in count_dict:
+                    count_dict[letter] += 1
+                else:
+                    count_dict[letter] = 1
+            return count_dict
+
+        def compare_counts(a, b):
+            for key in a:
+                if key not in b or a[key] > b[key]:
+                    return False
+            return True
+        # 计算每个字母的出现次数
+        dict_a = count_letters(ransomNote)
+        dict_b = count_letters(magazine)
+
+        # 比较两个字典中字母出现的次数
+        result = compare_counts(dict_a, dict_b)
+        return(result)
+```
+
+
+
+##### 通过截图
+
+<img src="书生第四期.assets/image-20250211170210067.png" alt="image-20250211170210067" style="zoom: 67%;" />
+
+
+
+#### debug
+
+下图是查看debug信息
+
+<img src="书生第四期.assets/image-20250211175946966.png" alt="image-20250211175946966" style="zoom:67%;" />
+
+查看res的值：
+
+```
+res='根据提供的模型介绍文字，以下是提取的关于该模型的信息，以JSON格式返回：\n\n```json\n{\n  "模型名字": "书生浦语InternLM2.5",\n  "开发机构": "上海人工智能实验室",\n  "提供参数版本": "1.8B、7B和20B",\n  "上下文长度": "1M"\n}\n```\n\n这个JSON对象包含了模型名字、开发机构、提供参数版本以及上下文长度这四个关键信息。'
+```
+
+发现输出的信息不止包括json信息，估需要修改提示词，让模型只输出json信息，不输出多余的描述
+
+修改提示词之后输出的res值：
+
+```
+'```json\n{\n  "model_name": "书生浦语InternLM2.5",\n  "development_institution": "上海人工智能实验室",\n  "parameter_versions": ["1.8B", "7B", "20B"],\n  "context_length": "1M"\n}\n```'
+```
+
+还是不行，模型会输出多余的头和尾，仅通过修改提示词的方式无法完全解决
+
+故使用字符串表达式删除输出信息中多余的 \```json\n 和 \n```
+
+```
+res = res.replace('```json\n', '', 1).rstrip('\n```')
+```
+
+<img src="书生第四期.assets/image-20250212000230377.png" alt="image-20250212000230377" style="zoom:67%;" />
+
+通过上述方法解决bug
