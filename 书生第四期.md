@@ -161,3 +161,76 @@ res = res.replace('```json\n', '', 1).rstrip('\n```')
 <img src="书生第四期.assets/image-20250212000230377.png" alt="image-20250212000230377" style="zoom:67%;" />
 
 通过上述方法解决bug
+
+
+
+## L0G4000
+
+### 模型下载
+
+使用Hugging Face平台下载模型
+
+仅下载 config.json 文件、model.safetensors.index.json 文件
+
+打开[Github CodeSpace](https://github.com/codespaces)
+
+![image-20250217195707623](书生第四期.assets/image-20250217195707623.png)
+
+选择进入网页版vscode界面，在下方终端中安装依赖库
+
+![image-20250217200205829](书生第四期.assets/image-20250217200205829.png)
+
+创建下载模型的配置文件，并保存，然后运行，可以看到已经从 hugging face 下载了相应的 json 文件到 codespace 中了
+
+![image-20250217200625903](书生第四期.assets/image-20250217200625903.png)
+
+### 模型上传
+
+首先在codespace终端里运行安装git lfs的命令
+
+![image-20250217201251461](书生第四期.assets/image-20250217201251461.png)
+
+去[hugging face](https://huggingface.co/settings/tokens)创建access tokens
+
+![image-20250217201513672](书生第四期.assets/image-20250217201513672.png)
+
+然后使用token登录到 hugging face
+
+![image-20250217201730024](书生第四期.assets/image-20250217201730024.png)
+
+创建一个hugging face项目，命名为intern_study_L0_4，然后克隆到本地，接下来上传config.json文件和README.md文件到克隆的文件夹中，最后用git提交到hugging face远程仓库
+
+![image-20250217204245815](书生第四期.assets/image-20250217204245815.png)
+
+可以在Hugging Face的个人profile里面看到这个model，至此模型上传成功
+
+![image-20250217204505409](书生第四期.assets/image-20250217204505409.png)
+
+
+
+### Space上传
+
+打开hugging face的spaces网页，创建一个新的space
+
+![image-20250217204812185](书生第四期.assets/image-20250217204812185.png)
+
+将space克隆到本地，然后修改文件夹中的index.html文件，然后提交push到远程仓库上，space会自动更新页面
+
+![image-20250217205308453](书生第四期.assets/image-20250217205308453.png)
+
+至此space上传成功
+
+![image-20250217205352422](书生第四期.assets/image-20250217205352422.png)
+
+
+
+## L1G1000
+
+本次课程深入介绍了书生·浦语（Informer）大模型的开源开放体系及其发展历程。 
+
+- **技术亮点**：涵盖从数据采集、模型训练到实际应用场景的全流程解决方案，并实现了显著性能提升及创新功能突破。例如，最新版Informer LM 2.5拥有卓越的推理能力和长达百万级别的上下文容量，在某些指标上甚至超过同类开源模型。 
+- **核心优势**：强调高性能模型的全面覆盖，从小规模至大规模均适用；同时推出了一系列配套工具，诸如高效的微调框架、自动标签系统Label LLM等，极大简化开发者的工作流。
+- **应用前景**：不仅限于基础研究领域，还积极拓展到了具体业务场景的应用探索，特别是Mind Search智能搜索平台展示了利用大型语言模型进行复杂查询的独特潜力。
+-  **社区建设**：重点阐述了围绕Informer LM建立的庞大生态系统，涵盖了丰富的数据资源、多样化的培训框架和详尽的测试标准，确保每个参与者都能从中受益并贡献自身力量。 
+
+<img src="书生第四期.assets/image-20250217205831166.png" alt="image-20250217205831166" style="zoom:67%;" />
