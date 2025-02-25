@@ -1,8 +1,9 @@
-## L0G1000
+# L0G1000
+1. TOC{:toc}
 
-### 创建开发机并进行SSH连接
+## 创建开发机并进行SSH连接
 
-#### 创建开发机
+### 创建开发机
 
 首先进入[InternStudio](https://aicarrier.feishu.cn/wiki/QtJnweAW1iFl8LkoMKGcsUS9nld#share-LeUxdm8Z0opL8exaZwGcNet7n2J)官网，登录账号后找到创建开发机的位置
 
