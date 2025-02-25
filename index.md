@@ -1,9 +1,12 @@
-# L0G1000
-1. TOC{:toc}
+[TOC]
 
-## 创建开发机并进行SSH连接
 
-### 创建开发机
+
+## L0G1000
+
+### 创建开发机并进行SSH连接
+
+#### 创建开发机
 
 首先进入[InternStudio](https://aicarrier.feishu.cn/wiki/QtJnweAW1iFl8LkoMKGcsUS9nld#share-LeUxdm8Z0opL8exaZwGcNet7n2J)官网，登录账号后找到创建开发机的位置
 
@@ -362,3 +365,35 @@ res = res.replace('```json\n', '', 1).rstrip('\n```')
 #### LlamaIndex web
 
 ![image-20250224193436353](书生第四期.assets/image-20250224193436353.png)
+
+## L1G5000
+
+### 环境配置与数据准备
+
+创建新环境并安装 XTuner
+
+![image-20250224213706612](书生第四期.assets/image-20250224213706612.png)
+
+修改提供的数据
+
+![image-20250224215050470](书生第四期.assets/image-20250224215050470.png)
+
+修改后的数据
+
+![image-20250224215123699](书生第四期.assets/image-20250224215123699.png)
+
+验证是否安装成功
+
+![image-20250224215434567](书生第四期.assets/image-20250224215434567.png)
+
+
+
+![image-20250224215926798](书生第四期.assets/image-20250224215926798.png)
+
+
+
+![image-20250224220558723](书生第四期.assets/image-20250224220558723.png)
+
+
+
+![image-20250224220913057](书生第四期.assets/image-20250224220913057.png)
